@@ -1,0 +1,22 @@
+{
+  "name": "websocket-benchmark",
+  "version": "0.0.1",
+  "description": "compare WebSocket Frameworks for different languages",
+  "main": "index.js",
+  "scripts": {
+    "protogen": "protoc --plugin=node_modules/ts-proto/protoc-gen-ts_proto --ts_proto_out=. ./src/proto/*.proto"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntsd/websocket-benchmark.git"
+  },
+  "author": "Jirawat Boonkumnerd <contact@ntsd.dev> (https://ntsd.dev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ntsd/websocket-benchmark/issues"
+  },
+  "homepage": "https://github.com/ntsd/websocket-benchmark#readme",
+  "devDependencies": {
+    "ts-proto": "^1.163.0"
+  }
+}
