@@ -22,23 +22,33 @@ More details: <https://docs.docker.com/config/containers/resource_constraints/>
 
 ## Test methods
 
-Test all in concurrent connections 1, 4, 16, 64 virtual users (VUs) duration 1 minute or 10000 iterations.
+Port Number: 9001
+
+Test all in concurrent connections 1, 4, 16 virtual users (VUs) duration 5 seconds.
 
 1. Connection Speed
 
-Client connect to Server return status `101`
+path: `HTTP /`
 
-2. Sending and receiving text message
+Client connect to Server return status `101` then client close the connection.
 
-Client sending `{randomText}`, the server response `{randomText}`
+1. Sending and receiving plain text message
 
-3. Sending and receiving JSON message
+path: `WS /plain`
 
-Client sending `{"message":"{randomText}"}`, the server response `{"message":"{randomText}"}`
+Client sending `{randomText}`, the server response `{randomText}`.
 
-4. Sending and receiving Protobuf message
+1. Sending and receiving JSON message
 
-Client sending Protobuf message, the server response Protobuf message
+path: `WS /json`
+
+Client sending `{"message":"{randomText}"}`, the server response `{"message":"{randomText}"}`.
+
+1. Sending and receiving binary message
+
+path: `WS /binary`
+
+Client sending `Int32Array` binary message, the server `Int32Array` binary message.
 
 ## Test Metrics
 
