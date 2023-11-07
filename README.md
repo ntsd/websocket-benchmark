@@ -1,8 +1,8 @@
 # WebSocket Benchmark
 
-comparing speed of WebSocket Frameworks for different languages
+This repository compares the speed of WebSocket frameworks for different languages.
 
-## Framework
+## Frameworks
 
 1. [Bun WebSockets](https://bun.sh/docs/api/websockets)
 2. [uWebSockets.js](https://github.com/uNetworking/uWebSockets.js)
@@ -10,70 +10,73 @@ comparing speed of WebSocket Frameworks for different languages
 4. [fasthttp/websocket](https://github.com/fasthttp/websocket)
 5. [tokio-tungstenite](https://github.com/snapview/tokio-tungstenite)
 
-## Test resource
+## Test Resources
 
-To be fair the resource will limit using docker to see the most efficient framework per resource.
+To ensure a fair comparison, the resources will be limited using Docker to determine the most efficient framework per resource.
 
 CPU Limit: 4 cores
+
 Memory Limit: 1GB
+
 Memory Swap: no swap
 
 More details: <https://docs.docker.com/config/containers/resource_constraints/>
 
-> I did some test on No CPU Limit in Local Machine.
-> seem Go result is better than Bun and Node.
+> Note: I performed some tests using my local machine without CPU limits. 
+> The results were that Go performed better than both Bun and Node.
+> You could try it yourself on a high performance machine.
 
-## Test methods
+## Test Methods
 
 Port Number: 9001
 
-Test all in concurrent connections 64, 128 virtual users (VUs) duration 5 seconds for each test.
+All tests are performed in concurrent connections using 64 and 128 virtual users (VUs) with a duration of 5 seconds for each test.
 
-1. Connection Speed
+1. Connection Speed Test
 
 path: `HTTP /`
 
-Client connect to Server return status `101` then client close the connection.
+The client connects to the server, gets a 101 status response, and then closes the connection.
 
-2. Sending and receiving plain text message
+2. Text Message Test
 
 path: `WS /plain`
 
-Client sending `{randomText}`, the server response `{randomText}`.
+The client sends `{randomText}`, and the server responds with `{randomText}`.
 
-3. Sending and receiving JSON message
+3. JSON Message Test
 
 path: `WS /json`
 
-Client sending `{"number": {randomNumber}}`
+The client sends `{"number": {randomNumber}}` and the server responds as follows:
 
-if number is odd the server response `{"number": {randomNumber + 1}}`
+If the number is odd, the server sends `{"number": {randomNumber + 1}}`.
 
-if number is even the server response `{"number": {randomNumber + 2}}`
+If the number is even, the server sends `{"number": {randomNumber + 2}}`.
 
-4. Sending and receiving binary message
+4. Binary Message Test
 
 path: `WS /binary`
 
-Client sending `number` in Int32Array message
+The client sends a `number` in an Int32Array message.
 
-if number is odd the server response `number+1`
+If the number is odd, the server responds with `number+1`.
 
-if number is even the server response `number+2`
+If the number is even, the server responds with `number+2`.
 
-### Sync and Async Test
+### Sync and Async Tests
 
-Asynchronous Test mean test mean send message without waiting the response message.
+Asynchronous test sends messages without waiting for the response message.
 
-Synchronous Test mean send message then send it again after receive the response message.
+Synchronous test sends a message, waits for the response message, and then sends the next message.
 
-### Why test with statement?
+### Why Test with a Condition Statement?
 
-because in the real use case, we didn't only use the receive and sending of the frameworks but we have other part of code example JSON parser, DB connect, etc.
+In real use cases, we don't only receive and send messages using frameworks. Other parts of the code, such as the JSON parser or DB connect, etc.
 
 ## Results
 
-check other results in `./results` directory
+Check other results in the `./results` directory.
 
 ### Connection Method 64 VUS Result
 
@@ -128,31 +131,31 @@ check other results in `./results` directory
 
 ## Contribution
 
-### Start Server
+### Starting the Server
 
-using Docker Compose
+You can use Docker Compose:
 
 ```sh
 docker compose up fasthttp-websocket
 ```
 
-replace `fasthttp-websocket` with other framework
+Replace `fasthttp-websocket` with another framework.
 
-list of docker-compose server can check in `docker-compose.yaml` file
+You can check the list of servers in the `docker-compose.yaml` file.
 
-for `bun-websocket` is seperate test methods because bun don't support multiple websocket paths, so you need to run one by one.
+for `bun-websocket`, the test methods are separate because Bun does not support multiple websocket paths, so you need to run each one individually.
 
 ### K6 benchmark
 
-you need to [Install K6](https://k6.io/docs/get-started/installation/) on your local
+[Install K6](https://k6.io/docs/get-started/installation/) on your local and then run
 
 ```sh
 npm run benchmark:all
 ```
 
-replace `all` with specific test method
+replace `all` with a specific test method.
 
-test methods list:
+The test methods list (or can be found in `package.json`):
 
 - `all`
 - `connection`
