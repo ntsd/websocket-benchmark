@@ -1,0 +1,80 @@
+version: "3"
+services:
+  fasthttp-websocket:
+    build: ./frameworks/fasthttp-websocket
+    ports:
+      - 9001:9001
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 1G
+        reservations:
+          cpus: "4.0"
+          memory: 1G
+  gorilla-websocket:
+    build: ./frameworks/gorilla-websocket
+    ports:
+      - 9001:9001
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 1G
+        reservations:
+          cpus: "4.0"
+          memory: 1G
+  uwebsocket-js:
+    build: ./frameworks/uwebsocket-js
+    ports:
+      - 9001:9001
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 1G
+        reservations:
+          cpus: "4.0"
+          memory: 1G
+  bun-websocket-plain:
+    build:
+      context: ./frameworks/bun-websocket
+      dockerfile: ./Dockerfile-plain
+    ports:
+      - 9001:9001
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 1G
+        reservations:
+          cpus: "4.0"
+          memory: 1G
+  bun-websocket-json:
+    build:
+      context: ./frameworks/bun-websocket
+      dockerfile: ./Dockerfile-json
+    ports:
+      - 9001:9001
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 1G
+        reservations:
+          cpus: "4.0"
+          memory: 1G
+  bun-websocket-binary:
+    build:
+      context: ./frameworks/bun-websocket
+      dockerfile: ./Dockerfile-binary
+    ports:
+      - 9001:9001
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 1G
+        reservations:
+          cpus: "4.0"
+          memory: 1G

@@ -2,7 +2,7 @@ import ws from "k6/ws";
 import { check } from "k6";
 import { expect } from "https://jslib.k6.io/k6chaijs/4.3.4.3/index.js";
 
-const iterations = 10000;
+const iterations = 100000;
 
 export const options = {};
 
@@ -12,7 +12,7 @@ export default function () {
 
   const res = ws.connect(url, params, function (socket) {
     socket.on("open", function open() {
-      console.log(`VU ${__VU}: connected`);
+      // console.log(`VU ${__VU}: connected`);
 
       // send multiple messages
       for (let i = 0; i < iterations; i++) {
@@ -26,16 +26,15 @@ export default function () {
       if (received >= iterations) {
         // assert received
         const int32Array = new Int32Array(data);
-        expect(int32Array[0]).to.satisfy(function (num) {
-          return num < iterations;
-        });
+        expect(int32Array[0]).to.be.a("number");
+        expect(int32Array[0] % 2).to.equal(0);
 
         socket.close();
       }
     });
 
     socket.on("close", function () {
-      console.log(`VU ${__VU}: disconnected`);
+      // console.log(`VU ${__VU}: disconnected`);
     });
 
     socket.on("error", function (e) {

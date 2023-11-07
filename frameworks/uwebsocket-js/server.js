@@ -12,6 +12,13 @@ const app = uWS
     open: (ws) => {},
     message: (ws, message, isBinary) => {
       const int32Array = new Int32Array(message);
+
+      if (int32Array[0] % 2) {
+        int32Array[0] += 1;
+      } else {
+        int32Array[0] += 2;
+      }
+
       ws.send(int32Array.buffer, true);
     },
     drain: drainFn,
@@ -21,12 +28,15 @@ const app = uWS
     open: (ws) => {},
     message: (ws, message, isBinary) => {
       let receivedMsg = Buffer.from(message).toString();
-      try {
-        let jsonMsg = JSON.parse(receivedMsg);
-        ws.send(JSON.stringify(jsonMsg));
-      } catch (error) {
-        ws.send(error);
+      let jsonMsg = JSON.parse(receivedMsg);
+
+      if (jsonMsg.number % 2) {
+        jsonMsg.number += 1;
+      } else {
+        jsonMsg.number += 2;
       }
+
+      ws.send(JSON.stringify(jsonMsg));
     },
     drain: drainFn,
     close: (ws, code, message) => {},
@@ -34,8 +44,7 @@ const app = uWS
   .ws("/plain", {
     open: (ws) => {},
     message: (ws, message, isBinary) => {
-      let receivedMsg = Buffer.from(message).toString();
-      ws.send(receivedMsg);
+      ws.send(Buffer.from(message).toString());
     },
     drain: drainFn,
     close: (ws, code, message) => {},

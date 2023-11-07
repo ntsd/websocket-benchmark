@@ -1,0 +1,46 @@
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: ./benchmarks/connection.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 64 max VUs, 35s max duration (incl. graceful stop):
+           * default: 64 looping VUs for 5s (gracefulStop: 30s)
+
+
+running (01.0s), 64/64 VUs, 11229 complete and 0 interrupted iterations
+default   [  20% ] 64 VUs  1.0s/5s
+
+running (02.0s), 64/64 VUs, 24626 complete and 0 interrupted iterations
+default   [  40% ] 64 VUs  2.0s/5s
+
+running (03.0s), 64/64 VUs, 37889 complete and 0 interrupted iterations
+default   [  60% ] 64 VUs  3.0s/5s
+
+running (04.0s), 64/64 VUs, 51608 complete and 0 interrupted iterations
+default   [  80% ] 64 VUs  4.0s/5s
+
+running (05.0s), 64/64 VUs, 65320 complete and 0 interrupted iterations
+default   [ 100% ] 64 VUs  5.0s/5s
+
+     ✓ status is 101
+
+     checks................: 100.00% ✓ 65391       ✗ 0   
+     data_received.........: 11 MB   2.2 MB/s
+     data_sent.............: 14 MB   2.8 MB/s
+     iteration_duration....: avg=4.88ms min=602.42µs med=4.48ms max=100.77ms p(90)=6.99ms p(95)=8.09ms
+     iterations............: 65391   13069.55048/s
+     vus...................: 64      min=64        max=64
+     vus_max...............: 64      min=64        max=64
+     ws_connecting.........: avg=4.79ms min=525.68µs med=4.39ms max=100.63ms p(90)=6.87ms p(95)=7.97ms
+     ws_session_duration...: avg=4.84ms min=567.12µs med=4.44ms max=100.71ms p(90)=6.94ms p(95)=8.04ms
+     ws_sessions...........: 65391   13069.55048/s
+
+
+running (05.0s), 00/64 VUs, 65391 complete and 0 interrupted iterations
+default ✓ [ 100% ] 64 VUs  5s

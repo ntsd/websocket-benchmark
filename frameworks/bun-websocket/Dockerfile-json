@@ -1,0 +1,15 @@
+FROM oven/bun:1-alpine
+
+WORKDIR /app
+
+COPY package.json ./
+COPY bun.lockb ./
+
+RUN bun install
+
+COPY json.ts ./server.ts
+
+EXPOSE 9001
+
+CMD ["bun", "run", "server.ts"]
+

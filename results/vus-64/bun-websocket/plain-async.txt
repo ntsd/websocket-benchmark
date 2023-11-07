@@ -1,0 +1,58 @@
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: ./benchmarks/plain-async.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 64 max VUs, 35s max duration (incl. graceful stop):
+           * default: 64 looping VUs for 5s (gracefulStop: 30s)
+
+
+running (01.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default   [  19% ] 64 VUs  1.0s/5s
+
+running (02.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default   [  39% ] 64 VUs  2.0s/5s
+
+running (03.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default   [  59% ] 64 VUs  3.0s/5s
+
+running (04.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default   [  79% ] 64 VUs  4.0s/5s
+
+running (05.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default   [  99% ] 64 VUs  5.0s/5s
+
+running (06.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+running (07.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+running (08.0s), 10/64 VUs, 54 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+     ✓ expected ${this} to match /number\:\s[0-9]+/
+     ✓ status is 101
+
+     checks................: 100.00% ✓ 128          ✗ 0   
+     data_received.........: 95 MB   12 MB/s
+     data_sent.............: 121 MB  15 MB/s
+     iteration_duration....: avg=7.86s   min=7.23s  med=7.91s   max=7.97s   p(90)=7.97s   p(95)=7.97s  
+     iterations............: 64      8.023969/s
+     vus...................: 10      min=10         max=64
+     vus_max...............: 64      min=64         max=64
+     ws_connecting.........: avg=39.26ms min=2.42ms med=39.18ms max=81.44ms p(90)=74.98ms p(95)=76.35ms
+     ws_msgs_received......: 6400000 802396.90006/s
+     ws_msgs_sent..........: 6400000 802396.90006/s
+     ws_session_duration...: avg=7.86s   min=7.22s  med=7.91s   max=7.97s   p(90)=7.97s   p(95)=7.97s  
+     ws_sessions...........: 64      8.023969/s
+
+
+running (08.0s), 00/64 VUs, 64 complete and 0 interrupted iterations
+default ✓ [ 100% ] 64 VUs  5s

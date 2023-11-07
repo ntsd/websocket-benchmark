@@ -1,8 +1,5 @@
 import ws from "k6/ws";
 import { check } from "k6";
-import { expect } from "https://jslib.k6.io/k6chaijs/4.3.4.3/index.js";
-
-const iterations = 10000;
 
 export const options = {};
 
@@ -14,7 +11,7 @@ export default function () {
     let i = 0;
 
     socket.on("open", function open() {
-      console.log(`VU ${__VU}: connected`);
+      // console.log(`VU ${__VU}: connected`);
 
       // send initial message
       socket.sendBinary(new Int32Array([i]).buffer);
@@ -22,21 +19,13 @@ export default function () {
 
     socket.on("binaryMessage", function (data) {
       i += 1;
-      if (i >= iterations) {
-        // assert received
-        const int32Array = new Int32Array(data);
-        expect(int32Array[0]).to.equal(i - 1);
-
-        socket.close();
-        return;
-      }
 
       // send the next message after receive message
       socket.sendBinary(new Int32Array([i]).buffer);
     });
 
     socket.on("close", function () {
-      console.log(`VU ${__VU}: disconnected`);
+      // console.log(`VU ${__VU}: disconnected`);
     });
 
     socket.on("error", function (e) {

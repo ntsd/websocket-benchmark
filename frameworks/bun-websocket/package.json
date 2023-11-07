@@ -1,0 +1,19 @@
+{
+  "name": "bun-websocket-benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "plain": "bun plain.ts",
+    "json": "bun json.ts",
+    "binary": "bun binary.ts"
+  },
+  "author": "Jirawat Boonkumnerd <contact@ntsd.dev> (https://ntsd.dev)",
+  "license": "MIT",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
