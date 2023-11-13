@@ -22,7 +22,7 @@ Memory Swap: no swap
 
 More details: <https://docs.docker.com/config/containers/resource_constraints/>
 
-> Note: I performed some tests using my local machine without CPU limits. 
+> Note: I performed some tests using my local machine without CPU limits.
 > The results were that Go performed better than both Bun and Node.
 > You could try it yourself on a high performance machine.
 
@@ -107,16 +107,18 @@ Check other results in the `./results` directory.
 
 ### Connection Method 128 VUS Result
 
-| framework          | ws_sessions    | ws_connecting                                   |
-| ------------------ | -------------- | ----------------------------------------------- |
-| bun-websocket      | 14545.719639/s | avg=8.65ms min=829.85µs med=7.89ms max=116.45ms |
-| uwebsocket-js      | 14264.117417/s | avg=8.78ms min=489.82µs med=7.89ms max=160.06ms |
-| fasthttp-websocket | 12807.055832/s | avg=9.78ms min=530.65µs med=8.86ms max=96.64ms  |
+| framework          | ws_sessions    | ws_connecting                                    |
+| ------------------ | -------------- | ------------------------------------------------ |
+| tokio-tungstenite  | 10270.04948/s  | avg=12.22ms min=927.69µs med=11.39ms max=143.9ms |
+| bun-websocket      | 14545.719639/s | avg=8.65ms min=829.85µs med=7.89ms max=116.45ms  |
+| uwebsocket-js      | 14264.117417/s | avg=8.78ms min=489.82µs med=7.89ms max=160.06ms  |
+| fasthttp-websocket | 12807.055832/s | avg=9.78ms min=530.65µs med=8.86ms max=96.64ms   |
 
 ### JSON Sync Method 128 VUS Result
 
 | framework          | ws_msgs_received |
 | ------------------ | ---------------- |
+| tokio-tungstenite  | 107341.626999/s  |
 | bun-websocket      | 103615.608203/s  |
 | uwebsocket-js      | 100386.438146/s  |
 | fasthttp-websocket | 96270.837763/s   |
@@ -125,6 +127,7 @@ Check other results in the `./results` directory.
 
 | framework          | ws_msgs_received |
 | ------------------ | ---------------- |
+| tokio-tungstenite  | 434321.783546/s  |
 | bun-websocket      | 620611.021552/s  |
 | uwebsocket-js      | 560937.655412/s  |
 | fasthttp-websocket | 531082.260734/s  |

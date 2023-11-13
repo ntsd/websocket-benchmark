@@ -1,0 +1,122 @@
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: ./benchmarks/json-async.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 128 max VUs, 35s max duration (incl. graceful stop):
+           * default: 128 looping VUs for 5s (gracefulStop: 30s)
+
+
+running (00.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default   [  19% ] 128 VUs  0.9s/5s
+
+running (01.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default   [  39% ] 128 VUs  1.9s/5s
+
+running (02.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default   [  59% ] 128 VUs  2.9s/5s
+
+running (03.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default   [  79% ] 128 VUs  3.9s/5s
+
+running (04.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default   [  99% ] 128 VUs  4.9s/5s
+
+running (05.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (06.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (07.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (08.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (09.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (10.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (11.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (12.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (13.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (14.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (15.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (16.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (17.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (18.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (19.9s), 128/128 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (20.9s), 123/128 VUs, 5 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (21.9s), 118/128 VUs, 10 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (22.9s), 086/128 VUs, 42 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (23.9s), 086/128 VUs, 42 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (24.9s), 086/128 VUs, 42 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (25.9s), 071/128 VUs, 57 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (26.9s), 055/128 VUs, 73 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (27.9s), 042/128 VUs, 86 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+running (28.9s), 027/128 VUs, 101 complete and 0 interrupted iterations
+default ↓ [ 100% ] 128 VUs  5s
+
+     ✓ expected ${this} to be a number
+     ✓ expected ${this} to equal +0
+     ✓ status is 101
+
+     checks................: 100.00%  ✓ 384           ✗ 0    
+     data_received.........: 229 MB   7.8 MB/s
+     data_sent.............: 280 MB   9.5 MB/s
+     iteration_duration....: avg=25.82s  min=20.48s med=26s     max=29.46s   p(90)=29.35s  p(95)=29.42s  
+     iterations............: 128      4.343218/s
+     vus...................: 27       min=27          max=128
+     vus_max...............: 128      min=128         max=128
+     ws_connecting.........: avg=49.17ms min=6.68ms med=58.48ms max=108.76ms p(90)=80.45ms p(95)=107.95ms
+     ws_msgs_received......: 12800000 434321.783546/s
+     ws_msgs_sent..........: 12800000 434321.783546/s
+     ws_session_duration...: avg=25.82s  min=20.48s med=26s     max=29.46s   p(90)=29.34s  p(95)=29.42s  
+     ws_sessions...........: 128      4.343218/s
+
+
+running (29.5s), 000/128 VUs, 128 complete and 0 interrupted iterations
+default ✓ [ 100% ] 128 VUs  5s

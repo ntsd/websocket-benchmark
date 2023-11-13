@@ -55,7 +55,7 @@ async fn handle_connection(stream: TcpStream) -> Result<()> {
 
 #[tokio::main]
 async fn main() {
-    let addr = "127.0.0.1:9001";
+    let addr = "0.0.0.0:9001";
     let listener = TcpListener::bind(&addr).await.expect("Failed to bind");
     println!("Listening on: {}", addr);
 

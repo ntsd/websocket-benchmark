@@ -1,9 +1,13 @@
-FROM rust:1.61.0
+FROM rust:1.73-alpine3.17
 
 WORKDIR /app
 
+RUN apk add musl-dev
+
 COPY . .
 
-RUN cargo install --path .
+RUN cargo build --release
 
-CMD ["tokio-tungstenite-benchmark"]
+EXPOSE 9001
+
+CMD ["./target/release/tokio-tungstenite-benchmark"]
