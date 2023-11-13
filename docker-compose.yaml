@@ -12,6 +12,7 @@ services:
         reservations:
           cpus: "4.0"
           memory: 1G
+
   fasthttp-websocket:
     build: ./frameworks/fasthttp-websocket
     ports:
@@ -24,6 +25,7 @@ services:
         reservations:
           cpus: "4.0"
           memory: 1G
+
   gorilla-websocket:
     build: ./frameworks/gorilla-websocket
     ports:
@@ -36,6 +38,7 @@ services:
         reservations:
           cpus: "4.0"
           memory: 1G
+
   uwebsocket-js:
     build: ./frameworks/uwebsocket-js
     ports:
@@ -48,6 +51,7 @@ services:
         reservations:
           cpus: "4.0"
           memory: 1G
+
   bun-websocket-plain:
     build:
       context: ./frameworks/bun-websocket
@@ -62,6 +66,7 @@ services:
         reservations:
           cpus: "4.0"
           memory: 1G
+
   bun-websocket-json:
     build:
       context: ./frameworks/bun-websocket
@@ -76,6 +81,7 @@ services:
         reservations:
           cpus: "4.0"
           memory: 1G
+
   bun-websocket-binary:
     build:
       context: ./frameworks/bun-websocket

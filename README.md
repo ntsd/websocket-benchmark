@@ -82,6 +82,7 @@ Check other results in the `./results` directory.
 
 | framework          | ws_sessions    | ws_connecting                                   |
 | ------------------ | -------------- | ----------------------------------------------- |
+| tokio-tungstenite  | 13137.162324/s | avg=4.77ms min=551.53µs med=4.44ms max=80.03ms  |
 | bun-websocket      | 13069.55048/s  | avg=4.79ms min=525.68µs med=4.39ms max=100.63ms |
 | uwebsocket-js      | 11882.529466/s | avg=5.27ms min=682.24µs med=4.81ms max=58.78ms  |
 | fasthttp-websocket | 11524.364692/s | avg=5.44ms min=475.44µs med=4.94ms max=82.83ms  |
@@ -91,6 +92,7 @@ Check other results in the `./results` directory.
 
 | framework          | ws_msgs_received |
 | ------------------ | ---------------- |
+| tokio-tungstenite  | 81725.569759/s   |
 | bun-websocket      | 75606.357558/s   |
 | uwebsocket-js      | 73137.835789/s   |
 | fasthttp-websocket | 70818.793428/s   |
@@ -100,10 +102,31 @@ Check other results in the `./results` directory.
 
 | framework          | ws_msgs_received |
 | ------------------ | ---------------- |
+| tokio-tungstenite  | 442561.993299/s  |
 | bun-websocket      | 611168.371646/s  |
 | uwebsocket-js      | 563460.469109/s  |
 | fasthttp-websocket | 508246.997076/s  |
 | gorilla-websocket  | 498667.980764/s  |
+
+### Binary Sync Method 64 VUS Result
+
+| framework          | ws_msgs_received |
+| ------------------ | ---------------- |
+| tokio-tungstenite  | 80498.928468/s   |
+| bun-websocket      | 69794.434565/s   |
+| uwebsocket-js      | 75384.902691/s   |
+| fasthttp-websocket | 68214.604466/s   |
+| gorilla-websocket  | 67583.49342/s    |
+
+### Binary Async Method 64 VUS Result
+
+| framework          | ws_msgs_received |
+| ------------------ | ---------------- |
+| tokio-tungstenite  | 494548.05839/s   |
+| bun-websocket      | 467317.123974/s  |
+| uwebsocket-js      | 451046.522207/s  |
+| fasthttp-websocket | 440250.603802/s  |
+| gorilla-websocket  | 434406.944224/s  |
 
 ### Connection Method 128 VUS Result
 
@@ -153,12 +176,12 @@ for `bun-websocket`, the test methods are separate because Bun does not support 
 [Install K6](https://k6.io/docs/get-started/installation/) on your local and then run
 
 ```sh
-npm run benchmark:all
+make benchmark:all
 ```
 
 replace `all` with a specific test method.
 
-The test methods list (or can be found in `package.json`):
+The test methods list (or can be found in `Makefile`):
 
 - `all`
 - `connection`
