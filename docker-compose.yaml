@@ -1,5 +1,17 @@
-version: "3"
+version: "2"
 services:
+  tokio-tungstenite:
+    build: ./frameworks/tokio-tungstenite
+    ports:
+      - 9001:9001
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 1G
+        reservations:
+          cpus: "4.0"
+          memory: 1G
   fasthttp-websocket:
     build: ./frameworks/fasthttp-websocket
     ports:
