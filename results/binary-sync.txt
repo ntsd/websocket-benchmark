@@ -1,0 +1,30 @@
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: ./benchmarks/binary-sync.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 128 max VUs, 35s max duration (incl. graceful stop):
+           * default: 128 looping VUs for 5s (gracefulStop: 30s)
+
+
+     ✗ status is 101
+      ↳  0% — ✓ 0 / ✗ 41024
+
+     checks................: 0.00% ✓ 0             ✗ 41024
+     data_received.........: 0 B   0 B/s
+     data_sent.............: 0 B   0 B/s
+     iteration_duration....: avg=971.37µs min=17.88µs med=335.96µs max=96.9ms  p(90)=1.89ms p(95)=2.98ms
+     iterations............: 41024 125806.711695/s
+     ws_connecting.........: avg=695.93µs min=8.49µs  med=268.76µs max=87.26ms p(90)=1.42ms p(95)=2.25ms
+     ws_session_duration...: avg=838.67µs min=9.63µs  med=292.35µs max=95.42ms p(90)=1.64ms p(95)=2.6ms 
+     ws_sessions...........: 41030 125825.111663/s
+
+
+running (00.3s), 000/128 VUs, 40996 complete and 115629 interrupted iterations
+default ✗ [   7% ] 128 VUs  0.3s/5s
