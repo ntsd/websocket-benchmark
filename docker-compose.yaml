@@ -1,4 +1,3 @@
-version: "2"
 services:
   tokio-tungstenite:
     build: ./frameworks/tokio-tungstenite
@@ -86,6 +85,19 @@ services:
     build:
       context: ./frameworks/bun-websocket
       dockerfile: ./Dockerfile-binary
+    ports:
+      - 9001:9001
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 1G
+        reservations:
+          cpus: "4.0"
+          memory: 1G
+
+  sib:
+    build: ./frameworks/sib
     ports:
       - 9001:9001
     deploy:
