@@ -6,10 +6,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
         reservations:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
 
   fasthttp-websocket:
@@ -19,10 +19,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
         reservations:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
 
   gorilla-websocket:
@@ -32,10 +32,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
         reservations:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
 
   uwebsocket-js:
@@ -45,10 +45,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
         reservations:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
 
   bun-websocket-plain:
@@ -60,10 +60,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
         reservations:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
 
   bun-websocket-json:
@@ -75,10 +75,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
         reservations:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
 
   bun-websocket-binary:
@@ -90,10 +90,23 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
         reservations:
-          cpus: "4.0"
+          cpus: "2.0"
+          memory: 1G
+
+  websocketpp:
+    build: ./frameworks/websocketpp
+    ports:
+      - 9001:9001
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 1G
+        reservations:
+          cpus: "2.0"
           memory: 1G
 
   sib:
@@ -103,8 +116,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G
         reservations:
-          cpus: "4.0"
+          cpus: "2.0"
           memory: 1G

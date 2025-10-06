@@ -1,16 +1,16 @@
 
-          /\      |‾‾| /‾‾/   /‾‾/   
-     /\  /  \     |  |/  /   /  /    
-    /  \/    \    |     (   /   ‾‾\  
-   /          \   |  |\  \ |  (‾)  | 
-  / __________ \  |__| \__\ \_____/ .io
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
 
-  execution: local
-     script: ./benchmarks/binary-sync.js
-     output: -
+     execution: local
+        script: ./benchmarks/binary-sync.js
+        output: -
 
-  scenarios: (100.00%) 1 scenario, 64 max VUs, 35s max duration (incl. graceful stop):
-           * default: 64 looping VUs for 5s (gracefulStop: 30s)
+     scenarios: (100.00%) 1 scenario, 64 max VUs, 35s max duration (incl. graceful stop):
+              * default: 64 looping VUs for 5s (gracefulStop: 30s)
 
 
 running (01.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
@@ -117,17 +117,26 @@ default ↓ [ 100% ] 64 VUs  5s
 
 running (35.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
 default ↓ [ 100% ] 64 VUs  5s
+time="2025-09-30T18:59:32+07:00" level=warning msg="No script iterations fully finished, consider making the test duration longer"
 
-     ✓ status is 101
 
-     data_received......: 17 MB   483 kB/s
-     data_sent..........: 28 MB   805 kB/s
-     vus................: 64      min=64         max=64
-     vus_max............: 64      min=64         max=64
-     ws_connecting......: avg=21.4ms min=3.67ms med=5.98ms max=90.77ms p(90)=89.8ms p(95)=90.03ms
-     ws_msgs_received...: 2817474 80498.928468/s
-     ws_msgs_sent.......: 2817537 80500.728461/s
-     ws_sessions........: 64      1.828564/s
+  █ TOTAL RESULTS 
+
+    EXECUTION
+    vus................................: 64      min=64         max=64
+    vus_max............................: 64      min=64         max=64
+
+    NETWORK
+    data_received......................: 9.5 MB  271 kB/s
+    data_sent..........................: 16 MB   452 kB/s
+
+    WEBSOCKET
+    ws_connecting......................: avg=15.23ms min=5.24ms med=14.95ms max=36.26ms p(90)=26.09ms p(95)=33.85ms
+    ws_msgs_received...................: 1579888 45137.555022/s
+    ws_msgs_sent.......................: 1579952 45139.383509/s
+    ws_sessions........................: 64      1.828486/s
+
+
 
 
 running (35.0s), 00/64 VUs, 0 complete and 64 interrupted iterations

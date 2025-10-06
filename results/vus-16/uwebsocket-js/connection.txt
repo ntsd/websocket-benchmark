@@ -1,0 +1,59 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: ./benchmarks/connection.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 16 max VUs, 35s max duration (incl. graceful stop):
+              * default: 16 looping VUs for 5s (gracefulStop: 30s)
+
+
+running (01.0s), 16/16 VUs, 8465 complete and 0 interrupted iterations
+default   [  20% ] 16 VUs  1.0s/5s
+
+running (02.0s), 16/16 VUs, 16756 complete and 0 interrupted iterations
+default   [  40% ] 16 VUs  2.0s/5s
+
+running (03.0s), 16/16 VUs, 24999 complete and 0 interrupted iterations
+default   [  60% ] 16 VUs  3.0s/5s
+
+running (04.0s), 16/16 VUs, 31244 complete and 0 interrupted iterations
+default   [  80% ] 16 VUs  4.0s/5s
+
+running (05.0s), 16/16 VUs, 38893 complete and 0 interrupted iterations
+default   [ 100% ] 16 VUs  5.0s/5s
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 38981   7794.733031/s
+    checks_succeeded...................: 100.00% 38981 out of 38981
+    checks_failed......................: 0.00%   0 out of 38981
+
+    ✓ status is 101
+
+    EXECUTION
+    iteration_duration.......................: avg=2.04ms min=503.37µs med=1.82ms max=103.17ms p(90)=2.67ms p(95)=3.11ms
+    iterations...............................: 38981  7794.733031/s
+    vus......................................: 16     min=16        max=16
+    vus_max..................................: 16     min=16        max=16
+
+    NETWORK
+    data_received............................: 7.1 MB 1.4 MB/s
+    data_sent................................: 7.8 MB 1.6 MB/s
+
+    WEBSOCKET
+    ws_connecting............................: avg=2ms    min=482.7µs  med=1.79ms max=103.02ms p(90)=2.63ms p(95)=3.06ms
+    ws_session_duration......................: avg=2.03ms min=495.95µs med=1.81ms max=103.15ms p(90)=2.66ms p(95)=3.09ms
+    ws_sessions..............................: 38981  7794.733031/s
+
+
+
+
+running (05.0s), 00/16 VUs, 38981 complete and 0 interrupted iterations
+default ✓ [ 100% ] 16 VUs  5s

@@ -1,46 +1,59 @@
 
-          /\      |‾‾| /‾‾/   /‾‾/   
-     /\  /  \     |  |/  /   /  /    
-    /  \/    \    |     (   /   ‾‾\  
-   /          \   |  |\  \ |  (‾)  | 
-  / __________ \  |__| \__\ \_____/ .io
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
 
-  execution: local
-     script: ./benchmarks/connection.js
-     output: -
+     execution: local
+        script: ./benchmarks/connection.js
+        output: -
 
-  scenarios: (100.00%) 1 scenario, 64 max VUs, 35s max duration (incl. graceful stop):
-           * default: 64 looping VUs for 5s (gracefulStop: 30s)
+     scenarios: (100.00%) 1 scenario, 64 max VUs, 35s max duration (incl. graceful stop):
+              * default: 64 looping VUs for 5s (gracefulStop: 30s)
 
 
-running (01.0s), 64/64 VUs, 12733 complete and 0 interrupted iterations
+running (01.0s), 64/64 VUs, 8783 complete and 0 interrupted iterations
 default   [  20% ] 64 VUs  1.0s/5s
 
-running (02.0s), 64/64 VUs, 25582 complete and 0 interrupted iterations
+running (02.0s), 64/64 VUs, 17563 complete and 0 interrupted iterations
 default   [  40% ] 64 VUs  2.0s/5s
 
-running (03.0s), 64/64 VUs, 39648 complete and 0 interrupted iterations
+running (03.0s), 64/64 VUs, 25887 complete and 0 interrupted iterations
 default   [  60% ] 64 VUs  3.0s/5s
 
-running (04.0s), 64/64 VUs, 52734 complete and 0 interrupted iterations
+running (04.0s), 64/64 VUs, 34653 complete and 0 interrupted iterations
 default   [  80% ] 64 VUs  4.0s/5s
 
-running (05.0s), 64/64 VUs, 65645 complete and 0 interrupted iterations
+running (05.0s), 64/64 VUs, 42631 complete and 0 interrupted iterations
 default   [ 100% ] 64 VUs  5.0s/5s
 
-     ✓ status is 101
 
-     checks................: 100.00% ✓ 65725        ✗ 0   
-     data_received.........: 8.5 MB  1.7 MB/s
-     data_sent.............: 14 MB   2.8 MB/s
-     iteration_duration....: avg=4.86ms min=631.25µs med=4.52ms max=80.92ms p(90)=6.88ms p(95)=7.84ms
-     iterations............: 65725   13137.162324/s
-     vus...................: 64      min=64         max=64
-     vus_max...............: 64      min=64         max=64
-     ws_connecting.........: avg=4.77ms min=551.53µs med=4.44ms max=80.03ms p(90)=6.78ms p(95)=7.72ms
-     ws_session_duration...: avg=4.82ms min=607.21µs med=4.49ms max=80.26ms p(90)=6.84ms p(95)=7.79ms
-     ws_sessions...........: 65725   13137.162324/s
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 42741   8539.409532/s
+    checks_succeeded...................: 100.00% 42741 out of 42741
+    checks_failed......................: 0.00%   0 out of 42741
+
+    ✓ status is 101
+
+    EXECUTION
+    iteration_duration.......................: avg=7.48ms min=981.7µs  med=7ms    max=43.69ms p(90)=10.08ms p(95)=11.86ms
+    iterations...............................: 42741  8539.409532/s
+    vus......................................: 64     min=64        max=64
+    vus_max..................................: 64     min=64        max=64
+
+    NETWORK
+    data_received............................: 5.5 MB 1.1 MB/s
+    data_sent................................: 8.6 MB 1.7 MB/s
+
+    WEBSOCKET
+    ws_connecting............................: avg=7.45ms min=950.75µs med=6.97ms max=43.67ms p(90)=10.05ms p(95)=11.82ms
+    ws_session_duration......................: avg=7.47ms min=972.83µs med=6.99ms max=43.68ms p(90)=10.07ms p(95)=11.84ms
+    ws_sessions..............................: 42741  8539.409532/s
 
 
-running (05.0s), 00/64 VUs, 65725 complete and 0 interrupted iterations
+
+
+running (05.0s), 00/64 VUs, 42741 complete and 0 interrupted iterations
 default ✓ [ 100% ] 64 VUs  5s

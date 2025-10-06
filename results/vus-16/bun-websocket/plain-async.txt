@@ -1,0 +1,74 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: ./benchmarks/plain-async.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 16 max VUs, 35s max duration (incl. graceful stop):
+              * default: 16 looping VUs for 5s (gracefulStop: 30s)
+
+
+running (01.0s), 16/16 VUs, 0 complete and 0 interrupted iterations
+default   [  20% ] 16 VUs  1.0s/5s
+
+running (02.0s), 16/16 VUs, 0 complete and 0 interrupted iterations
+default   [  40% ] 16 VUs  2.0s/5s
+
+running (03.0s), 16/16 VUs, 0 complete and 0 interrupted iterations
+default   [  60% ] 16 VUs  3.0s/5s
+
+running (04.0s), 16/16 VUs, 0 complete and 0 interrupted iterations
+default   [  80% ] 16 VUs  4.0s/5s
+
+running (05.0s), 16/16 VUs, 12 complete and 0 interrupted iterations
+default   [ 100% ] 16 VUs  5.0s/5s
+
+running (06.0s), 13/16 VUs, 16 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (07.0s), 13/16 VUs, 16 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (08.0s), 13/16 VUs, 16 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (09.0s), 07/16 VUs, 22 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 58      6.416043/s
+    checks_succeeded...................: 100.00% 58 out of 58
+    checks_failed......................: 0.00%   0 out of 58
+
+    ✓ expected ${this} to match /number\:\s[0-9]+/
+    ✓ status is 101
+
+    EXECUTION
+    iteration_duration.......................: avg=4.55s  min=4s      med=4.54s  max=5.15s p(90)=5.01s   p(95)=5.07s  
+    iterations...............................: 29      3.208022/s
+    vus......................................: 7       min=7           max=16
+    vus_max..................................: 16      min=16          max=16
+
+    NETWORK
+    data_received............................: 43 MB   4.8 MB/s
+    data_sent................................: 55 MB   6.1 MB/s
+
+    WEBSOCKET
+    ws_connecting............................: avg=7.26ms min=970.7µs med=5.98ms max=16ms  p(90)=13.09ms p(95)=14.47ms
+    ws_msgs_received.........................: 2900000 320802.173579/s
+    ws_msgs_sent.............................: 2900000 320802.173579/s
+    ws_session_duration......................: avg=4.55s  min=4s      med=4.54s  max=5.15s p(90)=5.01s   p(95)=5.07s  
+    ws_sessions..............................: 29      3.208022/s
+
+
+
+
+running (09.0s), 00/16 VUs, 29 complete and 0 interrupted iterations
+default ✓ [ 100% ] 16 VUs  5s
