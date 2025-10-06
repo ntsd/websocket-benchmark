@@ -1,29 +1,29 @@
 
-          /\      |‾‾| /‾‾/   /‾‾/   
-     /\  /  \     |  |/  /   /  /    
-    /  \/    \    |     (   /   ‾‾\  
-   /          \   |  |\  \ |  (‾)  | 
-  / __________ \  |__| \__\ \_____/ .io
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
 
-  execution: local
-     script: ./benchmarks/binary-async.js
-     output: -
+     execution: local
+        script: ./benchmarks/binary-async.js
+        output: -
 
-  scenarios: (100.00%) 1 scenario, 64 max VUs, 35s max duration (incl. graceful stop):
-           * default: 64 looping VUs for 5s (gracefulStop: 30s)
+     scenarios: (100.00%) 1 scenario, 64 max VUs, 35s max duration (incl. graceful stop):
+              * default: 64 looping VUs for 5s (gracefulStop: 30s)
 
 
 running (01.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
-default   [  19% ] 64 VUs  1.0s/5s
+default   [  20% ] 64 VUs  1.0s/5s
 
 running (02.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
-default   [  39% ] 64 VUs  2.0s/5s
+default   [  40% ] 64 VUs  2.0s/5s
 
 running (03.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
-default   [  59% ] 64 VUs  3.0s/5s
+default   [  60% ] 64 VUs  3.0s/5s
 
 running (04.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
-default   [  79% ] 64 VUs  4.0s/5s
+default   [  80% ] 64 VUs  4.0s/5s
 
 running (05.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
 default   [  99% ] 64 VUs  5.0s/5s
@@ -46,26 +46,75 @@ default ↓ [ 100% ] 64 VUs  5s
 running (11.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
 default ↓ [ 100% ] 64 VUs  5s
 
-running (12.0s), 63/64 VUs, 1 complete and 0 interrupted iterations
+running (12.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
 default ↓ [ 100% ] 64 VUs  5s
 
-     ✓ expected ${this} to be a number
-     ✓ expected ${this} to equal +0
-     ✓ status is 101
+running (13.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
 
-     checks................: 100.00% ✓ 192          ✗ 0   
-     data_received.........: 38 MB   3.0 MB/s
-     data_sent.............: 64 MB   4.9 MB/s
-     iteration_duration....: avg=12.79s  min=11.94s med=12.88s  max=12.94s p(90)=12.93s p(95)=12.93s 
-     iterations............: 64      4.945481/s
-     vus...................: 63      min=63         max=64
-     vus_max...............: 64      min=64         max=64
-     ws_connecting.........: avg=41.33ms min=2.38ms med=45.33ms max=53.2ms p(90)=52.8ms p(95)=52.88ms
-     ws_msgs_received......: 6400000 494548.05839/s
-     ws_msgs_sent..........: 6400000 494548.05839/s
-     ws_session_duration...: avg=12.79s  min=11.94s med=12.88s  max=12.94s p(90)=12.93s p(95)=12.93s 
-     ws_sessions...........: 64      4.945481/s
+running (14.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+running (15.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+running (16.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+running (17.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+running (18.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+running (19.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+running (20.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+running (21.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+running (22.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+running (23.0s), 64/64 VUs, 0 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
+
+running (24.0s), 62/64 VUs, 2 complete and 0 interrupted iterations
+default ↓ [ 100% ] 64 VUs  5s
 
 
-running (12.9s), 00/64 VUs, 64 complete and 0 interrupted iterations
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 192     7.729853/s
+    checks_succeeded...................: 100.00% 192 out of 192
+    checks_failed......................: 0.00%   0 out of 192
+
+    ✓ expected ${this} to be a number
+    ✓ expected ${this} to equal +0
+    ✓ status is 101
+
+    EXECUTION
+    iteration_duration.......................: avg=24.6s   min=23.91s med=24.69s  max=24.83s  p(90)=24.82s  p(95)=24.83s 
+    iterations...............................: 64      2.576618/s
+    vus......................................: 62      min=62          max=64
+    vus_max..................................: 64      min=64          max=64
+
+    NETWORK
+    data_received............................: 38 MB   1.5 MB/s
+    data_sent................................: 64 MB   2.6 MB/s
+
+    WEBSOCKET
+    ws_connecting............................: avg=29.04ms min=4.42ms med=32.88ms max=39.12ms p(90)=38.88ms p(95)=39.01ms
+    ws_msgs_received.........................: 6400000 257661.753406/s
+    ws_msgs_sent.............................: 6400000 257661.753406/s
+    ws_session_duration......................: avg=24.6s   min=23.91s med=24.69s  max=24.83s  p(90)=24.82s  p(95)=24.83s 
+    ws_sessions..............................: 64      2.576618/s
+
+
+
+
+running (24.8s), 00/64 VUs, 64 complete and 0 interrupted iterations
 default ✓ [ 100% ] 64 VUs  5s

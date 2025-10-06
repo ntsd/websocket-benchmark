@@ -1,0 +1,98 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: ./benchmarks/plain-async.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 16 max VUs, 35s max duration (incl. graceful stop):
+              * default: 16 looping VUs for 5s (gracefulStop: 30s)
+
+
+running (01.0s), 16/16 VUs, 0 complete and 0 interrupted iterations
+default   [  20% ] 16 VUs  1.0s/5s
+
+running (02.0s), 16/16 VUs, 0 complete and 0 interrupted iterations
+default   [  40% ] 16 VUs  2.0s/5s
+
+running (03.0s), 16/16 VUs, 0 complete and 0 interrupted iterations
+default   [  60% ] 16 VUs  3.0s/5s
+
+running (04.0s), 16/16 VUs, 0 complete and 0 interrupted iterations
+default   [  80% ] 16 VUs  4.0s/5s
+
+running (05.0s), 16/16 VUs, 16 complete and 0 interrupted iterations
+default   [ 100% ] 16 VUs  5.0s/5s
+
+running (06.0s), 16/16 VUs, 16 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (07.0s), 16/16 VUs, 16 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (08.0s), 16/16 VUs, 16 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (09.0s), 16/16 VUs, 16 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (10.0s), 14/16 VUs, 18 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (11.0s), 06/16 VUs, 26 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (12.0s), 06/16 VUs, 26 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (13.0s), 01/16 VUs, 31 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (14.0s), 01/16 VUs, 31 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (15.0s), 01/16 VUs, 31 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (16.0s), 01/16 VUs, 31 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+running (17.0s), 01/16 VUs, 31 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 64      3.561306/s
+    checks_succeeded...................: 100.00% 64 out of 64
+    checks_failed......................: 0.00%   0 out of 64
+
+    ✓ expected ${this} to match /number\:\s[0-9]+/
+    ✓ status is 101
+
+    EXECUTION
+    iteration_duration.......................: avg=5.68s   min=4.57s    med=5.08s  max=13.14s  p(90)=7.6s    p(95)=7.75s  
+    iterations...............................: 32      1.780653/s
+    vus......................................: 1       min=1           max=16
+    vus_max..................................: 16      min=16          max=16
+
+    NETWORK
+    data_received............................: 48 MB   2.7 MB/s
+    data_sent................................: 61 MB   3.4 MB/s
+
+    WEBSOCKET
+    ws_connecting............................: avg=11.72ms min=812.62µs med=10.5ms max=38.68ms p(90)=29.18ms p(95)=36.68ms
+    ws_msgs_received.........................: 3200000 178065.293872/s
+    ws_msgs_sent.............................: 3200000 178065.293872/s
+    ws_session_duration......................: avg=5.68s   min=4.57s    med=5.08s  max=13.14s  p(90)=7.6s    p(95)=7.74s  
+    ws_sessions..............................: 32      1.780653/s
+
+
+
+
+running (18.0s), 00/16 VUs, 32 complete and 0 interrupted iterations
+default ✓ [ 100% ] 16 VUs  5s

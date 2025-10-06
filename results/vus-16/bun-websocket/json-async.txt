@@ -1,0 +1,66 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: ./benchmarks/json-async.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 16 max VUs, 35s max duration (incl. graceful stop):
+              * default: 16 looping VUs for 5s (gracefulStop: 30s)
+
+
+running (01.0s), 16/16 VUs, 0 complete and 0 interrupted iterations
+default   [  20% ] 16 VUs  1.0s/5s
+
+running (02.0s), 16/16 VUs, 0 complete and 0 interrupted iterations
+default   [  40% ] 16 VUs  2.0s/5s
+
+running (03.0s), 16/16 VUs, 0 complete and 0 interrupted iterations
+default   [  60% ] 16 VUs  3.0s/5s
+
+running (04.0s), 16/16 VUs, 0 complete and 0 interrupted iterations
+default   [  80% ] 16 VUs  4.0s/5s
+
+running (05.0s), 16/16 VUs, 3 complete and 0 interrupted iterations
+default   [ 100% ] 16 VUs  5.0s/5s
+
+running (06.0s), 03/16 VUs, 16 complete and 0 interrupted iterations
+default ↓ [ 100% ] 16 VUs  5s
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 57      8.796509/s
+    checks_succeeded...................: 100.00% 57 out of 57
+    checks_failed......................: 0.00%   0 out of 57
+
+    ✓ expected ${this} to be a number
+    ✓ expected ${this} to equal +0
+    ✓ status is 101
+
+    EXECUTION
+    iteration_duration.......................: avg=4.51s  min=1.51s  med=5.05s max=5.16s   p(90)=5.16s   p(95)=5.16s  
+    iterations...............................: 19      2.93217/s
+    vus......................................: 3       min=3          max=16
+    vus_max..................................: 16      min=16         max=16
+
+    NETWORK
+    data_received............................: 34 MB   5.2 MB/s
+    data_sent................................: 42 MB   6.4 MB/s
+
+    WEBSOCKET
+    ws_connecting............................: avg=5.95ms min=1.09ms med=4.8ms max=12.56ms p(90)=12.27ms p(95)=12.54ms
+    ws_msgs_received.........................: 1900000 293216.98072/s
+    ws_msgs_sent.............................: 1900000 293216.98072/s
+    ws_session_duration......................: avg=4.51s  min=1.51s  med=5.05s max=5.16s   p(90)=5.16s   p(95)=5.16s  
+    ws_sessions..............................: 19      2.93217/s
+
+
+
+
+running (06.5s), 00/16 VUs, 19 complete and 0 interrupted iterations
+default ✓ [ 100% ] 16 VUs  5s
